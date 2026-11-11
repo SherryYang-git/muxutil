@@ -24,6 +24,12 @@ type Render struct {
 	Text *TextRender
 }
 
+func Testbbbbb() string {
+	var today = "three"
+	print(today)
+	return today
+}
+
 func New() *Render {
 	return &Render{
 		JSON: &JSONRender{
@@ -31,6 +37,12 @@ func New() *Render {
 		},
 		Text: &TextRender{},
 	}
+}
+
+func Testccccc() string {
+	var today = "four"
+	print(today)
+	return today
 }
 
 func (r *Render) render(renderer Renderer, w http.ResponseWriter, status int, v interface{}) error {
