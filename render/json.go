@@ -28,7 +28,9 @@ func (j *JSONRender) Render(w io.Writer, v interface{}) error {
 }
 
 // ContentType returns json content-type
-func (j *JSONRender) TestMaster() string {
+func (j *JSONRender) Testaaaa() string {
+	var a = "hello world"
+	print(a)
 	return "application/json"
 }
 

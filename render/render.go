@@ -24,10 +24,11 @@ type Render struct {
 	Text *TextRender
 }
 
-func (r *Render) render2(renderer Renderer, w http.ResponseWriter, status int, v interface{}) error {
-	w.Header().Set("Content-Type", renderer.ContentType())
-	w.WriteHeader(status)
-	return renderer.Render(w, v)
+
+func Testbbbbb() string {
+	var today = "three"
+	print(today)
+	return today
 }
 
 func New() *Render {
@@ -39,9 +40,11 @@ func New() *Render {
 	}
 }
 
-// Text renders a string data to response
-func Text1(w http.ResponseWriter, status int, v interface{}) error {
-	return renders.render(renders.Text, w, status, v)
+
+func Testccccc() string {
+	var today = "four"
+	print(today)
+	return today
 }
 
 func (r *Render) render(renderer Renderer, w http.ResponseWriter, status int, v interface{}) error {
