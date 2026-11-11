@@ -15,6 +15,22 @@ func (t *TextRender) Render(w io.Writer, v interface{}) error {
 }
 
 // ContentType returns text content-type
+func (t *TextRender) ContentType3() string {
+	return "text/plain"
+}
+
+// ContentType returns text content-type
 func (t *TextRender) ContentType() string {
+	return "text/plain"
+}
+
+// Render writes a text response
+func (t *TextRender) Render1(w io.Writer, v interface{}) error {
+	w.Write([]byte(v.(string)))
+	return nil
+}
+
+// ContentType returns text content-type
+func (t *TextRender) ContentType2() string {
 	return "text/plain"
 }
