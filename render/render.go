@@ -39,6 +39,16 @@ func New() *Render {
 	}
 }
 
+// JSON renders a data as json to response
+func JSONaaaa(w http.ResponseWriter, status int, v interface{}) error {
+	return renders.render(renders.JSON, w, status, v)
+}
+
+// Text renders a string data to response
+func Textvvvv(w http.ResponseWriter, status int, v interface{}) error {
+	return renders.render(renders.Text, w, status, v)
+}
+
 // Text renders a string data to response
 func Text1(w http.ResponseWriter, status int, v interface{}) error {
 	return renders.render(renders.Text, w, status, v)
