@@ -24,6 +24,12 @@ type Render struct {
 	Text *TextRender
 }
 
+func (r *Render) render2(renderer Renderer, w http.ResponseWriter, status int, v interface{}) error {
+	w.Header().Set("Content-Type", renderer.ContentType())
+	w.WriteHeader(status)
+	return renderer.Render(w, v)
+}
+
 func New() *Render {
 	return &Render{
 		JSON: &JSONRender{
@@ -31,6 +37,11 @@ func New() *Render {
 		},
 		Text: &TextRender{},
 	}
+}
+
+// Text renders a string data to response
+func Text1(w http.ResponseWriter, status int, v interface{}) error {
+	return renders.render(renders.Text, w, status, v)
 }
 
 func (r *Render) render(renderer Renderer, w http.ResponseWriter, status int, v interface{}) error {

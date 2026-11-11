@@ -28,6 +28,11 @@ func (j *JSONRender) Render(w io.Writer, v interface{}) error {
 }
 
 // ContentType returns json content-type
+func (j *JSONRender) TestMaster() string {
+	return "application/json"
+}
+
+// ContentType returns json content-type
 func (j *JSONRender) ContentType() string {
 	return "application/json"
 }
